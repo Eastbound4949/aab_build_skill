@@ -36,7 +36,6 @@ In RN 0.76 New Architecture, `currentActivity` was removed from `ReactContextBas
 
 - Package: `com.xfilemanager` (check build.gradle)
 - Requires buffer polyfill in `metro.config.js`
-- Keystore: `D:\App_DEV\keystore\x-file-manager.jks`
 
 ### `Unable to resolve module buffer`
 - Install: `npm install buffer` in project root
@@ -55,11 +54,12 @@ In RN 0.76 New Architecture, `currentActivity` was removed from `ReactContextBas
 ### Signing config not found
 - Check `android/gradle.properties` has:
   ```
-  RELEASE_STORE_FILE=../../../../App_DEV/keystore/x-file-manager.jks
-  RELEASE_KEY_ALIAS=xfilemanager
-  RELEASE_STORE_PASSWORD=XFileManager@2026
-  RELEASE_KEY_PASSWORD=XFileManager@2026
+  RELEASE_STORE_FILE=<path-to-keystore>.jks
+  RELEASE_KEY_ALIAS=<key-alias>
+  RELEASE_STORE_PASSWORD=<store-password>
+  RELEASE_KEY_PASSWORD=<key-password>
   ```
+- Do NOT commit `gradle.properties` with real values — add it to `.gitignore`
 
 ---
 
